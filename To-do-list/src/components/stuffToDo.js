@@ -1,7 +1,7 @@
 //import { useState } from "react";
 
 const StuffToDo = (prop) => {
-  const { toDo, setToDo } = prop;
+  const { toDo, setToDo, setThingsDone } = prop;
   return (
     <div>
       <ul>
@@ -9,6 +9,25 @@ const StuffToDo = (prop) => {
           return (
             <li key={item.thing}>
               {item.thing}
+              <button
+                onClick={() => {
+                  setThingsDone((currentDone) => {
+                    const newArray = [...currentDone];
+
+                    item.done = true;
+                    newArray.push(item);
+                    return newArray;
+                  });
+
+                  setToDo((currentToDo) => {
+                    const newArr = [...currentToDo];
+                    const finalArr = newArr.filter((obj) => obj.done === false);
+                    return finalArr;
+                  });
+                }}
+              >
+                Completed
+              </button>
               <button
                 onClick={() => {
                   setToDo((currentToDo) => {
