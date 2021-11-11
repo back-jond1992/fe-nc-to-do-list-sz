@@ -1,10 +1,12 @@
-const StuffToDo = () => {
+import { useState } from "react";
+
+const StuffToDo = (prop) => {
+  const { toDo } = prop;
   return (
     <ul>
-      <li>Make dinner</li>
-      <li>Watch Netflix's</li>
-      <li>Cry myself sleep</li>
-      <li>Ran out of things to do</li>
+      {toDo.map((item) => {
+        return <li key={item.thing}>{item.thing}</li>;
+      })}
     </ul>
   );
 };
