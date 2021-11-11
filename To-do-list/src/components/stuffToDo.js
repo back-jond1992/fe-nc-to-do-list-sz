@@ -1,13 +1,15 @@
-import { useState } from "react";
+//import { useState } from "react";
 
 const StuffToDo = (prop) => {
   const { toDo } = prop;
   return (
-    <ul>
-      {toDo.map((item) => {
-        return <li key={item.thing}>{item.thing}</li>;
-      })}
-    </ul>
+    <div>
+      <ul>
+        {toDo.map((item) => {
+          return <li key={item.thing}>{item.thing}</li>;
+        })}
+      </ul>
+    </div>
   );
 };
 

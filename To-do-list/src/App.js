@@ -9,6 +9,7 @@ function App() {
     { thing: "Make Dinner", done: false },
     { thing: "Watch Netflixs", done: false },
   ];
+
   const [toDo, setToDo] = useState(stuff);
   return (
     <div className="App">
