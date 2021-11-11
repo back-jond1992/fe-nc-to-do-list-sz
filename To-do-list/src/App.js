@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "./components/header";
 import StuffToDo from "./components/stuffToDo";
 import StuffToAdd from "./components/stuffToAdd";
+import MissionCompleted from "./components/missionCompleted";
 
 function App() {
   const stuff = [
@@ -15,7 +16,8 @@ function App() {
     <div className="App">
       <Header />
       <StuffToAdd setToDo={setToDo} />
-      <StuffToDo toDo={toDo} />
+      <StuffToDo toDo={toDo} setToDo={setToDo} />
+      <MissionCompleted setToDo={setToDo} />
     </div>
   );
 }
