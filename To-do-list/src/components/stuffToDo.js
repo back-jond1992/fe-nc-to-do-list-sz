@@ -14,6 +14,7 @@ const StuffToDo = (prop) => {
   } else {
     return (
       <div className="stuffToDo container" id="stuffToDo">
+        <h2>Things to do</h2>
         <ul>
           {toDo.map((item) => {
             return (
