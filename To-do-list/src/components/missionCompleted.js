@@ -1,7 +1,7 @@
 const MissionCompleted = (props) => {
   const { thingsDone, setThingsDone, setToDo } = props;
   return (
-    <div>
+    <div className="container missionCompleted">
       <h2>Completed Stuff</h2>
       <ul>
         {thingsDone.map((item) => {

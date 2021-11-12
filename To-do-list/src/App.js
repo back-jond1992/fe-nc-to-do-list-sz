@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <StuffToAdd setToDo={setToDo} />
+      <StuffToAdd thingsDone={thingsDone} setToDo={setToDo} />
       <StuffToDo toDo={toDo} setToDo={setToDo} setThingsDone={setThingsDone} />
       <MissionCompleted
         thingsDone={thingsDone}

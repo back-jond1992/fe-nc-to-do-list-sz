@@ -3,7 +3,7 @@
 const StuffToDo = (prop) => {
   const { toDo, setToDo, setThingsDone } = prop;
   return (
-    <div>
+    <div className="stuffToDo container" id="stuffToDo">
       <ul>
         {toDo.map((item) => {
           return (
