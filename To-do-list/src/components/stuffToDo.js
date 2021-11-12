@@ -2,51 +2,64 @@
 
 const StuffToDo = (prop) => {
   const { toDo, setToDo, setThingsDone } = prop;
-  return (
-    <div className="stuffToDo container" id="stuffToDo">
-      <ul>
-        {toDo.map((item) => {
-          return (
-            <li key={item.thing}>
-              {item.thing}
-              <button
-                onClick={() => {
-                  setThingsDone((currentDone) => {
-                    const newArray = [...currentDone];
 
-                    item.done = true;
-                    newArray.push(item);
-                    return newArray;
-                  });
+  if (toDo.length === 0) {
+    return (
+      <div className="stuffToDo container" id="stuffToDo">
+        <ul>
+          <p>You have nothing to do?.....Are you sure?</p>
+        </ul>
+      </div>
+    );
+  } else {
+    return (
+      <div className="stuffToDo container" id="stuffToDo">
+        <ul>
+          {toDo.map((item) => {
+            return (
+              <li key={item.thing}>
+                {item.thing}
+                <button
+                  onClick={() => {
+                    setThingsDone((currentDone) => {
+                      const newArray = [...currentDone];
 
-                  setToDo((currentToDo) => {
-                    const newArr = [...currentToDo];
-                    const finalArr = newArr.filter((obj) => obj.done === false);
-                    return finalArr;
-                  });
-                }}
-              >
-                Completed
-              </button>
-              <button
-                onClick={() => {
-                  setToDo((currentToDo) => {
-                    const newArr = [...currentToDo];
-                    const finalArr = newArr.filter(
-                      (obj) => obj.thing !== item.thing
-                    );
-                    return finalArr;
-                  });
-                }}
-              >
-                Delete
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
+                      item.done = true;
+                      newArray.push(item);
+                      return newArray;
+                    });
+
+                    setToDo((currentToDo) => {
+                      const newArr = [...currentToDo];
+                      const finalArr = newArr.filter(
+                        (obj) => obj.done === false
+                      );
+                      return finalArr;
+                    });
+                  }}
+                >
+                  Completed
+                </button>
+                <button
+                  onClick={() => {
+                    setToDo((currentToDo) => {
+                      const newArr = [...currentToDo];
+                      const finalArr = newArr.filter(
+                        (obj) => obj.thing !== item.thing
+                      );
+                      return finalArr;
+                    });
+                  }}
+                >
+                  Delete
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  }
 };
 
 export default StuffToDo;
