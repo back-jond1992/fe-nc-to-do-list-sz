@@ -5,7 +5,7 @@ const MissionCompleted = (props) => {
     return (
       <div className="container missionCompleted">
         <h2>Completed Stuff</h2>
-        <p>You haven't completed anything!</p>
+        <p>You haven't completed anything! 😠 </p>
       </div>
     );
   } else {
@@ -18,6 +18,7 @@ const MissionCompleted = (props) => {
               <li key={item.thing}>
                 {item.thing}
                 <button
+                  className="completedButton"
                   onClick={() => {
                     setToDo((currentToDo) => {
                       const newCurrentToDo = [...currentToDo];

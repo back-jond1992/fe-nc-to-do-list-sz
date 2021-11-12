@@ -20,6 +20,7 @@ const StuffToDo = (prop) => {
               <li key={item.thing}>
                 {item.thing}
                 <button
+                  className="toDoButton"
                   onClick={() => {
                     setThingsDone((currentDone) => {
                       const newArray = [...currentDone];
@@ -38,9 +39,10 @@ const StuffToDo = (prop) => {
                     });
                   }}
                 >
-                  Completed
+                  ✅
                 </button>
                 <button
+                  className="toDoButton"
                   onClick={() => {
                     setToDo((currentToDo) => {
                       const newArr = [...currentToDo];
@@ -51,7 +53,7 @@ const StuffToDo = (prop) => {
                     });
                   }}
                 >
-                  Delete
+                  ❌
                 </button>
               </li>
             );

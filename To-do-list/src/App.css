@@ -1,10 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
+  font-family: "Lobster Two", sans-serif;
+  font-size: 50px;
 }
 .App {
   text-align: center;
-  background-color: #8ee4af;
+  background: linear-gradient(
+    200deg,
+    pink,
+    rgba(0, 247, 255, 0.74),
+    rgb(2, 2, 243, 0.7),
+    rgba(111, 4, 173, 0.7)
+  );
   height: 100vh;
 }
 
@@ -19,9 +29,26 @@ label {
 input {
   display: block;
   margin: auto;
+  background: transparent;
+  border: 5px solid lightsalmon;
 }
 
 button {
   padding: 2px;
   margin: 5px;
+}
+
+.toDoButton {
+  border: 0px;
+  margin: 0px, 5px;
+  background-color: transparent;
+}
+li {
+  line-height: 2em;
+}
+
+.add {
+  margin: 20px;
+  border-radius: 20px;
+  background: #90ee90;
 }

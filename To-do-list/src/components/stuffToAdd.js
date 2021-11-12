@@ -37,7 +37,9 @@ const StuffToAdd = (props) => {
           }}
           required
         ></input>
-        <button type="submit">Click to add!</button>
+        <button type="submit" className="add">
+          Click to add!
+        </button>
       </form>
     </div>
   );
