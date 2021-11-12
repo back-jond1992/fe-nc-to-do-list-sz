@@ -22,7 +22,11 @@ function App() {
       <Header />
       <StuffToAdd setToDo={setToDo} />
       <StuffToDo toDo={toDo} setToDo={setToDo} setThingsDone={setThingsDone} />
-      <MissionCompleted thingsDone={thingsDone} />
+      <MissionCompleted
+        thingsDone={thingsDone}
+        setThingsDone={setThingsDone}
+        setToDo={setToDo}
+      />
     </div>
   );
 }
